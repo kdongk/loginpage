@@ -5,6 +5,7 @@ const router = express.Router();
 
 const ctrl = require('./home.ctrl');
 
+// 요청이 오면 함수 실행
 router.get('/', ctrl.output.home);
 router.get('/login', ctrl.output.login);
 router.get('/register', ctrl.output.register);
