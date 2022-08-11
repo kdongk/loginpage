@@ -7,8 +7,27 @@
     <link rel="stylesheet" href="/css/home/login.css">
     <script src="/js/home/login.js" defer></script>
     <title>Title</title>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 <body>
+<a id="kakao-login-btn"></a>
+<a href="http://developers.kakao.com/logout"></a>
+<script type='text/javascript'>
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('7274f25187892f1d034bff2e4a9a7a3e');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
+    // 카카오 로그인 버튼을 생성합니다.
+    Kakao.Auth.createLoginButton({
+        container: '#kakao-login-btn',
+        success: function(authObj) {
+            alert(JSON.stringify(authObj));
+        },
+        fail: function(err) {
+            alert(JSON.stringify(err));
+        }
+    });
+
+</script>
+
 <div class="login-page">
     <div class="form">
         <form class="login-form">
@@ -19,6 +38,7 @@
         </form>
     </div>
 </div>
+
 </body>
 </html>
 
